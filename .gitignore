@@ -1,0 +1,19 @@
+# Compiled programs and build output
+*.exe
+*.o
+*.obj
+*.dll
+*.a
+*.lib
+*.pdb
+build/
+
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
