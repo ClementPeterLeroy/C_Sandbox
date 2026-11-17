@@ -1,12 +1,13 @@
 # C++ Sandbox
 
-Small projects made while learning C++.
+Small games and simulations made while learning C++ and SFML.
 
 ## Projects
 
-- `CSnake1.cpp`: a console Snake game.
-- `CSnake2.cpp` and `CSnake3.cpp`: graphical Snake versions using SFML, with buffered turns, score tracking, and restart controls.
-- `game_of_life1.cpp`: a starting point for a Game of Life project; the simulation is not implemented yet.
+- **Snake**: console and graphical Snake games, with food, growth, collision detection, score tracking, buffered turns, and restart controls.
+- **Langton's Ant (Anton)**: a grid simulation with black and white cells, selectable starting patterns, and controls to advance by 1, 10, 100, or 1,000 rounds. Includes a two-ant experiment with opposite turning rules on a shared board.
+- **Game of Life**: a work in progress that displays a starting cell pattern. Generation updates are not implemented yet.
+- **Ecosystem**: two species competing for food and space, with movement, energy use, reproduction, and starvation. A side panel controls speed, food regrowth, starting populations, and species traits. Includes pause, stepping, repeatable seeds, and a population history graph.
 
 Each source file is a separate program with its own `main()` function. Build one at a time.
 
@@ -19,19 +20,21 @@ With those tools installed, open a graphical project's `.cpp` file in VS Code an
 You can also build from a terminal where the compiler and SFML libraries are available:
 
 ```sh
-g++ -std=c++17 CSnake3.cpp -o CSnake3.exe -lsfml-graphics -lsfml-window -lsfml-system
+g++ -std=c++17 Ecosystem1.cpp -o Ecosystem1.exe -lsfml-graphics -lsfml-window -lsfml-system
 ```
 
 On Windows PowerShell, run it with:
 
 ```powershell
-.\CSnake3.exe
+.\Ecosystem1.exe
 ```
 
-For the console version:
+Replace the source and executable names to build another project. The console Snake game does not require the SFML libraries.
 
-```sh
-g++ -std=c++17 CSnake1.cpp -o CSnake1.exe
-```
+## Controls
 
-The graphical Snake games use arrow keys or WASD to turn and **R** to restart after a game ends. Compiled executables are excluded from version control.
+- **Snake**: arrow keys or WASD to turn; **R** to restart after a game ends.
+- **Anton**: use the step buttons or keys **1–4** to advance rounds. Select a starting preset to restart; **R** restores the selected preset.
+- **Ecosystem**: use the side panel to adjust parameters. **Space** toggles play/pause, **N** advances one round, and **R** resets. Starting-population changes apply on reset; other sliders apply live. Reset keeps the parameters and seed, while **New seed + reset** generates a different starting world.
+
+Compiled executables are excluded from version control.
